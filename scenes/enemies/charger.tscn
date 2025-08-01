@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyhncgn10eshs"]
+
+[ext_resource type="Script" uid="uid://c3fia5womxlbj" path="res://scripts/charger.gd" id="1_fe071"]
+[ext_resource type="Texture2D" uid="uid://b1jkdv83lmenr" path="res://assets/brackeys_platformer_assets/sprites/ChatGPT Image Jun 12, 2025, 06_04_25 PM.png" id="2_fe071"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe071"]
+atlas = ExtResource("2_fe071")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdh6r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe071")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu34h"]
+size = Vector2(8, 14)
+
+[node name="charger" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_fe071")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.999999, 5)
+scale = Vector2(0.0174561, 0.0218547)
+sprite_frames = SubResource("SpriteFrames_vdh6r")
+autoplay = "default"
+
+[node name="WallRayRight" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(11, 0)
+
+[node name="WallRayLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(-11, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_gu34h")
+
+[node name="EdgeRayRight" type="RayCast2D" parent="."]
+position = Vector2(-6, 4)
+target_position = Vector2(0, 10)
+
+[node name="EdgeRayLeft" type="RayCast2D" parent="."]
+position = Vector2(6, 5)
+target_position = Vector2(0, 9)

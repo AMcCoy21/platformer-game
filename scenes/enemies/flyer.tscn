@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1sq1ymi77pj7"]
+
+[ext_resource type="Script" uid="uid://bfwnrjgjv6k8h" path="res://scripts/flyer.gd" id="1_tg8yd"]
+[ext_resource type="Texture2D" uid="uid://c8cdf8c56gypb" path="res://assets/brackeys_platformer_assets/sprites/ChatGPT Image Jun 5, 2025, 01_32_42 PM.png" id="2_7tqhk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ben2c"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddpln"]
+atlas = ExtResource("2_7tqhk")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_isfd2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddpln")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="flyer" type="CharacterBody2D"]
+collision_mask = 17
+script = ExtResource("1_tg8yd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ben2c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.687503, -1.75)
+scale = Vector2(0.0325928, 0.0307617)
+sprite_frames = SubResource("SpriteFrames_isfd2")

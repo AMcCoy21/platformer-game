@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b82atc3kml61c"]
+
+[ext_resource type="Script" uid="uid://ccxw6g2ucfour" path="res://scripts/jumper.gd" id="1_qi757"]
+[ext_resource type="Texture2D" uid="uid://bk5ob63oir4ko" path="res://assets/brackeys_platformer_assets/sprites/ChatGPT Image Jun 10, 2025, 12_35_26 PM.png" id="2_diurq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k0wm"]
+atlas = ExtResource("2_diurq")
+region = Rect2(0, 0, 1024, 1536)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4wil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k0wm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0nt7"]
+size = Vector2(10, 15)
+
+[node name="jumper" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_qi757")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 5)
+scale = Vector2(0.0202637, 0.0208333)
+sprite_frames = SubResource("SpriteFrames_u4wil")
+frame_progress = 0.174827
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4.5)
+shape = SubResource("RectangleShape2D_q0nt7")

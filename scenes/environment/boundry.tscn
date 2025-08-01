@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxjb7y2wg87q8"]
+
+[ext_resource type="Script" uid="uid://crd60xyxib3s2" path="res://scripts/static_body_2d.gd" id="1_tbby5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbby5"]
+size = Vector2(19, 114)
+
+[node name="boundry" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_tbby5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -41)
+shape = SubResource("RectangleShape2D_tbby5")

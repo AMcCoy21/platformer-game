@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd28igw62g718"]
+
+[ext_resource type="Script" uid="uid://ch1vat2a1j7of" path="res://scripts/pickup_notification.gd" id="1_pb5qt"]
+[ext_resource type="FontFile" uid="uid://bira7yfq20oa8" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_k6bmj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pb5qt"]
+content_margin_left = 20.0
+content_margin_top = 106.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.14902, 0.14902, 0.14902, 0.784314)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[node name="PickupNotification" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = -369.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.562043, 0.712926)
+script = ExtResource("1_pb5qt")
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1800, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.5
+offset_top = -250.5
+offset_right = 1608.5
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.622916, 0.6615)
+theme_override_styles/panel = SubResource("StyleBoxFlat_pb5qt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackgroundPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="ItemNameLabel" type="Label" parent="BackgroundPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k6bmj")
+theme_override_font_sizes/font_size = 72
+text = "You've Unlocked the Jump!"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="BackgroundPanel/VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k6bmj")
+theme_override_font_sizes/font_size = 48
+text = "Press up on the keyboard"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueLabel" type="Label" parent="BackgroundPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k6bmj")
+theme_override_font_sizes/font_size = 40
+text = "Hit space to continue"
+horizontal_alignment = 1

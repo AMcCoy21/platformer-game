@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8hhf07ufpna8"]
+
+[ext_resource type="Script" uid="uid://dwv2mc3a55gm" path="res://scripts/health_pick.gd" id="1_i4gs4"]
+[ext_resource type="Texture2D" uid="uid://cqkvg53e0upoh" path="res://assets/brackeys_platformer_assets/sprites/Screenshot 2025-05-31 at 5.20.36 PM.png" id="2_o0l61"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udxln"]
+size = Vector2(7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nclc5"]
+atlas = ExtResource("2_o0l61")
+region = Rect2(588, 0, 196, 194)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pybod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nclc5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HealthPick" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_i4gs4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_udxln")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.0382653, 0.0412371)
+sprite_frames = SubResource("SpriteFrames_pybod")

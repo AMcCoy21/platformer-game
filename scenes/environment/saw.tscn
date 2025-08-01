@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv6wu4rybr8r5"]
+
+[ext_resource type="Texture2D" uid="uid://dehrpkgbfp7sc" path="res://assets/brackeys_platformer_assets/sprites/ChatGPT Image Jun 7, 2025, 09_58_06 PM.png" id="1_7c5v0"]
+[ext_resource type="Script" uid="uid://bsom3cw24ufrt" path="res://scripts/saw.gd" id="1_ddabk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ddabk"]
+radius = 8.544
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2ud2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7c5v0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Saw" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_ddabk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.50001, 0.750015)
+shape = SubResource("CircleShape2D_ddabk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.50001, 0.750015)
+scale = Vector2(0.0205078, 0.0179037)
+sprite_frames = SubResource("SpriteFrames_m2ud2")

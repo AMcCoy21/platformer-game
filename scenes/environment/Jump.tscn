@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgpssyw372dt5"]
+
+[ext_resource type="Script" uid="uid://bv71mbjo5ix3j" path="res://scripts/pickup.gd" id="1_iqk3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weqpt"]
+size = Vector2(5, 5)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_amdaw"]
+size = Vector2(5, 5)
+
+[node name="Jump" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_iqk3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17, -6)
+shape = SubResource("RectangleShape2D_weqpt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(17, -6)
+texture = SubResource("PlaceholderTexture2D_amdaw")

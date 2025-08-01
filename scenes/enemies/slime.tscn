@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://b244okjhoymwa"]
+
+[ext_resource type="Script" uid="uid://crii1u5v3k4xp" path="res://scripts/slime.gd" id="1_p2gj0"]
+[ext_resource type="Texture2D" uid="uid://ddq8lfb7de30q" path="res://assets/brackeys_platformer_assets/sprites/ChatGPT Image Jun 5, 2025, 06_34_07 PM.png" id="2_p2gj0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6pvg"]
+atlas = ExtResource("2_p2gj0")
+region = Rect2(22, 51, 480, 473)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
+atlas = ExtResource("2_p2gj0")
+region = Rect2(502, 51, 480, 473)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2npkn"]
+atlas = ExtResource("2_p2gj0")
+region = Rect2(22, 524, 480, 473)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd6lc"]
+atlas = ExtResource("2_p2gj0")
+region = Rect2(502, 524, 480, 473)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rkbg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6pvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjw23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2npkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd6lc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu34h"]
+size = Vector2(8, 14)
+
+[node name="slime" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_p2gj0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.125, 5.15469)
+scale = Vector2(0.0307617, 0.0355948)
+sprite_frames = SubResource("SpriteFrames_5rkbg")
+autoplay = "default"
+frame_progress = 0.601297
+
+[node name="RayCastR" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(11, 0)
+collision_mask = 5
+
+[node name="RayCastL" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(-11, 0)
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_gu34h")
+
+[node name="EdgeCastL" type="RayCast2D" parent="."]
+position = Vector2(-6, 4)
+target_position = Vector2(0, 10)
+
+[node name="EdgeCastR" type="RayCast2D" parent="."]
+position = Vector2(6, 5)
+target_position = Vector2(0, 9)

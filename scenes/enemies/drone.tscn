@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bisyclkrnykxp"]
+
+[ext_resource type="Script" uid="uid://dvwynqy3hy075" path="res://scripts/drone.gd" id="1_knnud"]
+[ext_resource type="Texture2D" uid="uid://c8cdf8c56gypb" path="res://assets/brackeys_platformer_assets/sprites/ChatGPT Image Jun 5, 2025, 01_32_42 PM.png" id="2_1r4ts"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umx5g"]
+atlas = ExtResource("2_1r4ts")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1p8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umx5g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6asb"]
+radius = 7.0
+
+[node name="drone" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_knnud")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.5, 6.875)
+scale = Vector2(0.0380859, 0.0349121)
+sprite_frames = SubResource("SpriteFrames_k1p8w")
+frame_progress = 0.56974
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11, 9)
+shape = SubResource("CircleShape2D_f6asb")
+
+[node name="LaserSpawnPointRight" type="Marker2D" parent="."]
+position = Vector2(-1, 10)
+
+[node name="LaserSpawnPointLeft" type="Marker2D" parent="."]
+position = Vector2(-19, 10)
