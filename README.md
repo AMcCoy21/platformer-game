@@ -1,4 +1,4 @@
-# Metroidvania Robot Game
+# Platformer Game
 
 A 2D Metroidvania-style platformer built in Godot 4 where you play as a broken robot that must collect body parts to regain abilities and explore an interconnected world.
 
