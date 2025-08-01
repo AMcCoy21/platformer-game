@@ -52,7 +52,7 @@ You begin as a heavily damaged robot with limited mobility. As you explore the w
 1. **Install Godot 4.x** from [godotengine.org](https://godotengine.org/)
 2. **Clone this repository**:
    ```bash
-   git clone https://github.com/yourusername/metroidvania-robot-game.git
+   git clone https://github.com/AMcCoy21/platformer-game.git
    ```
 3. **Open in Godot**:
    - Launch Godot
