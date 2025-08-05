@@ -79,7 +79,7 @@ You begin as a heavily damaged robot with limited mobility. As you explore the w
 
 ### ✅ Completed
 - Core movement physics and character controller
-- All 5 robot abilities with visual/mechanical progression
+- 5 different robot abilities which upgrade character
 - Save/load system with persistent world state
 - Room transition system with proper spawn handling
 - Health and combat mechanics
@@ -91,6 +91,7 @@ You begin as a heavily damaged robot with limited mobility. As you explore the w
 - More enemy types and combat encounters
 - Environmental puzzles utilizing abilities
 - Audio and visual polish
+- Animations for player/enemies
 - Story elements and environmental storytelling
 
 ## 🎨 Game Design Philosophy
