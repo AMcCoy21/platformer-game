@@ -1,4 +1,4 @@
-# Platformer Game
+# Platformer Game (in progress)
 
 A 2D Metroidvania-style platformer built in Godot 4 where you play as a broken robot that must collect body parts to regain abilities and explore an interconnected world.
 
@@ -41,7 +41,7 @@ You begin as a heavily damaged robot with limited mobility. As you explore the w
 | Move Left/Right | Arrow Keys | Always available |
 | Jump | Up Arrow | Requires **Leg Servos** |
 | Double Jump | Up Arrow (in air) | Requires **Jump Boosters** |
-| Shoot Laser | Enter | Requires **Arm Cannon** |
+| Shoot Laser | Space | Requires **Arm Cannon** |
 | Dash | Escape | Requires **Dash Thrusters** |
 | Ground Slam | Down Arrow (in air) | Requires **Ground Slam Unit** |
 | Manual Save | S | Always available |
